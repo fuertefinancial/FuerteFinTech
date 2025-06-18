@@ -1,0 +1,340 @@
+/* Fuerte Design System - Animations */
+/* Core Narrative: "Harnessing Chaos, Engineering Alpha" */
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+
+/* Chaos to Order - Main transformation animation */
+@keyframes chaosToOrder {
+  0% {
+    transform: 
+      translate(calc(var(--random-x, 1) * 30px), calc(var(--random-y, 1) * 30px))
+      rotate(calc(var(--random-r, 1) * 45deg))
+      scale(0.8);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  25% {
+    transform: 
+      translate(calc(var(--random-x, 1) * 20px), calc(var(--random-y, 1) * 20px))
+      rotate(calc(var(--random-r, 1) * 30deg))
+      scale(0.9);
+    opacity: 0.5;
+    filter: blur(2px);
+  }
+  50% {
+    transform: 
+      translate(calc(var(--random-x, 1) * 10px), calc(var(--random-y, 1) * 10px))
+      rotate(calc(var(--random-r, 1) * 15deg))
+      scale(0.95);
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Particle Chaos - For background elements */
+@keyframes particleChaos {
+  0%, 100% {
+    transform: 
+      translateX(calc(sin(var(--angle)) * var(--radius) * 1px))
+      translateY(calc(cos(var(--angle)) * var(--radius) * 1px));
+  }
+  25% {
+    transform: 
+      translateX(calc(sin(var(--angle) + 1.57) * var(--radius) * 1.2px))
+      translateY(calc(cos(var(--angle) + 1.57) * var(--radius) * 1.2px));
+  }
+  50% {
+    transform: 
+      translateX(calc(sin(var(--angle) + 3.14) * var(--radius) * 0.8px))
+      translateY(calc(cos(var(--angle) + 3.14) * var(--radius) * 0.8px));
+  }
+  75% {
+    transform: 
+      translateX(calc(sin(var(--angle) + 4.71) * var(--radius) * 1.1px))
+      translateY(calc(cos(var(--angle) + 4.71) * var(--radius) * 1.1px));
+  }
+}
+
+/* Orbit Animation - Structured movement */
+@keyframes orbit {
+  0% {
+    transform: 
+      rotate(0deg) 
+      translateX(var(--orbit-radius, 100px)) 
+      rotate(0deg);
+  }
+  100% {
+    transform: 
+      rotate(360deg) 
+      translateX(var(--orbit-radius, 100px)) 
+      rotate(-360deg);
+  }
+}
+
+/* Pulse Energy - Controlled power */
+@keyframes pulseEnergy {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--color-blue-alpha-50);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px transparent;
+  }
+}
+
+/* Data Stream - Flowing information */
+@keyframes dataStream {
+  0% {
+    transform: translateY(100vh) scaleY(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(80vh) scaleY(0.2);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-80vh) scaleY(0.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-100vh) scaleY(0);
+    opacity: 0;
+  }
+}
+
+/* Glitch Effect - Market volatility */
+@keyframes glitch {
+  0%, 100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  20% {
+    clip-path: inset(20% 0 30% 0);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(2px, -2px);
+  }
+  60% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(-1px, 1px);
+  }
+  80% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(1px, -1px);
+  }
+}
+
+/* Stabilize - From chaos to control */
+@keyframes stabilize {
+  0% {
+    transform: 
+      translateX(calc(sin(var(--time)) * 5px))
+      translateY(calc(cos(var(--time)) * 5px));
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: 
+      translateX(calc(sin(var(--time)) * 2px))
+      translateY(calc(cos(var(--time)) * 2px));
+    filter: hue-rotate(10deg);
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* Lightning Strike - Volcanic red energy */
+@keyframes lightning {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 15% {
+    opacity: 1;
+  }
+}
+
+/* Metallic Shine - Success state */
+@keyframes metallicShine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ===== ANIMATION CLASSES ===== */
+
+/* Entry Animations */
+.animate-chaos-to-order {
+  animation: chaosToOrder 1.2s var(--ease-chaos) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s var(--ease-out) both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s var(--ease-out) both;
+}
+
+/* Continuous Animations */
+.animate-pulse {
+  animation: pulseEnergy 2s var(--ease-in-out) infinite;
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+.animate-particle {
+  animation: particleChaos 10s var(--ease-in-out) infinite;
+}
+
+.animate-stream {
+  animation: dataStream 3s linear infinite;
+}
+
+/* Hover Animations */
+.hover-energy {
+  transition: all 0.3s var(--ease-in-out);
+}
+
+.hover-energy:hover {
+  animation: stabilize 0.5s var(--ease-out) both;
+  box-shadow: var(--glow-blue);
+}
+
+/* Stagger Delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* ===== TRANSITION UTILITIES ===== */
+
+.transition-all {
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+.transition-fast {
+  transition: all var(--duration-fast) var(--ease-in-out);
+}
+
+.transition-slow {
+  transition: all var(--duration-slow) var(--ease-smooth);
+}
+
+.transition-chaos {
+  transition: all var(--duration-normal) var(--ease-chaos);
+}
+
+/* ===== SPECIAL EFFECTS ===== */
+
+/* Chaos Field - Background particle effect */
+.chaos-field {
+  position: relative;
+  overflow: hidden;
+}
+
+.chaos-field::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, var(--color-red-alpha-20) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, var(--color-blue-alpha-20) 0%, transparent 50%);
+  animation: particleChaos 15s ease-in-out infinite;
+}
+
+/* Data Grid - Structured background */
+.data-grid {
+  position: relative;
+  background-image: 
+    linear-gradient(var(--color-blue-alpha-10) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-blue-alpha-10) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: -1px -1px;
+}
+
+/* Energy Border */
+.energy-border {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--color-deep-space), var(--color-deep-space)) padding-box,
+              var(--gradient-chaos) border-box;
+}
+
+/* Glitch Text */
+.glitch-text {
+  position: relative;
+  color: var(--color-pure-white);
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitch 2s infinite;
+  color: var(--color-fuerte-blue);
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitch 2s infinite reverse;
+  color: var(--color-volcanic-red);
+  z-index: -2;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s var(--ease-out);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax Layers */
+.parallax-slow {
+  transform: translateY(calc(var(--scroll-y) * 0.5px));
+}
+
+.parallax-medium {
+  transform: translateY(calc(var(--scroll-y) * 0.8px));
+}
+
+.parallax-fast {
+  transform: translateY(calc(var(--scroll-y) * 1.2px));
+} 

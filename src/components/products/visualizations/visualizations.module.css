@@ -1,0 +1,357 @@
+/* Common Visualization Styles */
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #999;
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* AI Quant Visualization */
+.aiQuantViz {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 20px;
+  min-height: 400px;
+}
+
+.controlPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 20px;
+  background: rgba(10, 10, 16, 0.5);
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.sliderControl {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sliderControl label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #C0C0C0;
+  font-weight: 500;
+}
+
+.sliderValue {
+  font-family: 'Fira Code', monospace;
+  color: #00BFFF;
+  font-weight: 600;
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #00BFFF;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+.sliderLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #666;
+  margin-top: -8px;
+}
+
+/* DeFi Yield Visualization */
+.defiViz {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  min-height: 500px;
+}
+
+.yieldStats {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.totalYield {
+  text-align: center;
+  padding: 20px 40px;
+  background: rgba(0, 191, 255, 0.1);
+  border: 1px solid #00BFFF;
+  border-radius: 8px;
+}
+
+.totalYield h4 {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.yieldValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 36px;
+  font-weight: 700;
+  color: #00BFFF;
+  margin-bottom: 4px;
+}
+
+.yieldSubtext {
+  font-size: 12px;
+  color: #999;
+}
+
+.flowDiagram {
+  display: block;
+  margin: 0 auto;
+}
+
+.protocolList {
+  background: rgba(10, 10, 16, 0.5);
+  border-radius: 8px;
+  border: 1px solid #333;
+  padding: 20px;
+}
+
+.protocolList h4 {
+  font-size: 14px;
+  color: #00BFFF;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.protocolItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+.protocolItem:last-child {
+  border-bottom: none;
+}
+
+.protocolInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.protocolName {
+  font-weight: 500;
+  color: #FFF;
+}
+
+.protocolRisk {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.protocolRisk[data-risk="low"] {
+  background: rgba(0, 191, 255, 0.2);
+  color: #00BFFF;
+}
+
+.protocolRisk[data-risk="medium"] {
+  background: rgba(255, 51, 0, 0.2);
+  color: #FF3300;
+}
+
+.protocolMetrics {
+  display: flex;
+  gap: 16px;
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+}
+
+.protocolApy {
+  color: #00BFFF;
+  font-weight: 600;
+}
+
+.protocolAllocation {
+  color: #999;
+}
+
+/* Blockchain Venture Visualization */
+.ventureViz {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  min-height: 600px;
+}
+
+.portfolioStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  text-align: center;
+  padding: 16px;
+  background: rgba(10, 10, 16, 0.5);
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.statCard h4 {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 28px;
+  font-weight: 600;
+  color: #00BFFF;
+}
+
+.networkGraph {
+  display: block;
+  margin: 0 auto;
+  background: rgba(10, 10, 16, 0.3);
+  border-radius: 8px;
+}
+
+.companyDetail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0A0A10;
+  border: 1px solid #00BFFF;
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 300px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.companyDetail h3 {
+  font-size: 20px;
+  color: #00BFFF;
+  margin-bottom: 16px;
+}
+
+.companyInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.infoRow span:first-child {
+  color: #666;
+}
+
+.infoRow span:last-child {
+  color: #FFF;
+  font-weight: 500;
+}
+
+.closeDetail {
+  width: 100%;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #00BFFF;
+  color: #00BFFF;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.closeDetail:hover {
+  background: #00BFFF;
+  color: #0A0A10;
+}
+
+.legendVenture {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aiQuantViz {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolioStats {
+    grid-template-columns: 1fr;
+  }
+  
+  .flowDiagram {
+    width: 100%;
+    height: auto;
+  }
+}

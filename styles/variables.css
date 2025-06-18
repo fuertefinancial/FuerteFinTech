@@ -1,0 +1,156 @@
+/* Fuerte Design System - CSS Variables */
+/* Core Narrative: "Harnessing Chaos, Engineering Alpha" */
+
+:root {
+  /* ===== COLOR SYSTEM ===== */
+  
+  /* Primary Colors */
+  --color-deep-space: #0A0A10;
+  --color-fuerte-blue: #00BFFF;
+  --color-volcanic-red: #FF3300;
+  
+  /* Secondary Colors */
+  --color-metallic-silver: #C0C0C0;
+  --color-neutral-dark: #333333;
+  --color-neutral-medium: #808080;
+  --color-pure-white: #FFFFFF;
+  
+  /* Semantic Colors */
+  --color-background: var(--color-deep-space);
+  --color-primary: var(--color-fuerte-blue);
+  --color-danger: var(--color-volcanic-red);
+  --color-success: var(--color-metallic-silver);
+  --color-text-primary: var(--color-pure-white);
+  --color-text-secondary: var(--color-neutral-medium);
+  
+  /* Alpha Variants */
+  --color-blue-alpha-10: rgba(0, 191, 255, 0.1);
+  --color-blue-alpha-20: rgba(0, 191, 255, 0.2);
+  --color-blue-alpha-50: rgba(0, 191, 255, 0.5);
+  --color-red-alpha-10: rgba(255, 51, 0, 0.1);
+  --color-red-alpha-20: rgba(255, 51, 0, 0.2);
+  --color-red-alpha-50: rgba(255, 51, 0, 0.5);
+  --color-black-alpha-70: rgba(10, 10, 16, 0.7);
+  --color-black-alpha-80: rgba(10, 10, 16, 0.8);
+  
+  /* ===== TYPOGRAPHY ===== */
+  
+  /* Font Families */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Fira Code', 'Source Code Pro', Consolas, monospace;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 2rem;      /* 32px */
+  --text-4xl: 2.5rem;    /* 40px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 4rem;      /* 64px */
+  --text-7xl: 4.5rem;    /* 72px */
+  
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.75;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.02em;
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  
+  /* ===== SPACING ===== */
+  
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  --space-4xl: 6rem;     /* 96px */
+  --space-5xl: 8rem;     /* 128px */
+  
+  /* ===== LAYOUT ===== */
+  
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+  --container-full: 100%;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1rem;     /* 16px */
+  --radius-full: 9999px;
+  
+  /* ===== ANIMATION ===== */
+  
+  /* Durations */
+  --duration-instant: 150ms;
+  --duration-fast: 300ms;
+  --duration-normal: 500ms;
+  --duration-slow: 700ms;
+  --duration-slower: 1000ms;
+  --duration-slowest: 1500ms;
+  
+  /* Easings */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-chaos: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* ===== EFFECTS ===== */
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  
+  /* Glows */
+  --glow-blue: 0 0 20px var(--color-blue-alpha-50), 
+               0 0 40px rgba(0, 191, 255, 0.3),
+               0 0 60px var(--color-blue-alpha-10);
+  --glow-red: 0 0 20px var(--color-red-alpha-50),
+              0 0 40px rgba(255, 51, 0, 0.3),
+              0 0 60px var(--color-red-alpha-10);
+  --glow-silver: 0 0 20px rgba(192, 192, 192, 0.5),
+                 0 0 40px rgba(192, 192, 192, 0.3);
+  
+  /* Gradients */
+  --gradient-chaos: linear-gradient(135deg, var(--color-volcanic-red) 0%, var(--color-fuerte-blue) 100%);
+  --gradient-order: linear-gradient(135deg, var(--color-fuerte-blue) 0%, var(--color-metallic-silver) 100%);
+  --gradient-metallic: linear-gradient(135deg, #C0C0C0 0%, #FFFFFF 50%, #C0C0C0 100%);
+  --gradient-dark: linear-gradient(180deg, var(--color-deep-space) 0%, rgba(10, 10, 16, 0.8) 100%);
+  
+  /* ===== Z-INDEX ===== */
+  
+  --z-below: -1;
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-popover: 50;
+  --z-tooltip: 60;
+  --z-notification: 70;
+  --z-top: 9999;
+} 

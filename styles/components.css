@@ -1,0 +1,476 @@
+/* Fuerte Design System - Components */
+
+/* ===== BUTTONS ===== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration-fast) var(--ease-in-out);
+  transform-style: preserve-3d;
+}
+
+/* Primary Button - Fuerte Blue */
+.btn-primary {
+  background: var(--color-fuerte-blue);
+  color: var(--color-deep-space);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--color-blue-alpha-50);
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button - Glass effect */
+.btn-secondary {
+  background: var(--color-black-alpha-70);
+  color: var(--color-pure-white);
+  border: 1px solid var(--color-blue-alpha-20);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: var(--color-black-alpha-80);
+  border-color: var(--color-fuerte-blue);
+  box-shadow: inset 0 0 20px var(--color-blue-alpha-20);
+}
+
+/* Danger Button - Volcanic Red */
+.btn-danger {
+  background: var(--color-volcanic-red);
+  color: var(--color-pure-white);
+}
+
+.btn-danger:hover {
+  box-shadow: 0 10px 20px var(--color-red-alpha-50);
+  transform: translateY(-2px);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-fuerte-blue);
+  border: 2px solid var(--color-fuerte-blue);
+}
+
+.btn-ghost:hover {
+  background: var(--color-fuerte-blue);
+  color: var(--color-deep-space);
+  transform: translateY(-2px);
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-sm);
+}
+
+.btn-lg {
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: var(--text-lg);
+}
+
+/* Button with Icon */
+.btn-icon {
+  display: inline-flex;
+  gap: var(--space-sm);
+}
+
+/* ===== CARDS ===== */
+
+.card {
+  background: var(--color-black-alpha-80);
+  border: 1px solid var(--color-blue-alpha-20);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+/* Animated border on hover */
+.card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-chaos);
+  border-radius: var(--radius-md);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity var(--duration-fast) var(--ease-in-out);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: transparent;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-blue-alpha-10);
+}
+
+.card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-fuerte-blue);
+}
+
+/* Data Card - For metrics */
+.card-data {
+  background: rgba(0, 191, 255, 0.05);
+  border-color: var(--color-fuerte-blue);
+}
+
+.card-data .metric {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-pure-white);
+  font-family: var(--font-mono);
+}
+
+.card-data .label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ===== FORMS ===== */
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--color-black-alpha-70);
+  border: 1px solid var(--color-blue-alpha-20);
+  border-radius: var(--radius-sm);
+  color: var(--color-pure-white);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  transition: all var(--duration-fast) var(--ease-in-out);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-fuerte-blue);
+  box-shadow: 0 0 0 3px var(--color-blue-alpha-20);
+  background: var(--color-black-alpha-80);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-neutral-medium);
+}
+
+/* Input with Icon */
+.input-group {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: var(--space-md);
+  transform: translateY(-50%);
+  color: var(--color-fuerte-blue);
+}
+
+.input-group .form-input {
+  padding-left: calc(var(--space-md) * 3);
+}
+
+/* ===== NAVIGATION ===== */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-md) 0;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
+  transition: color var(--duration-fast) var(--ease-in-out);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-fuerte-blue);
+  transition: width var(--duration-fast) var(--ease-in-out);
+}
+
+.nav-link:hover {
+  color: var(--color-pure-white);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--color-fuerte-blue);
+}
+
+/* ===== BADGES ===== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-full);
+  background: var(--color-black-alpha-70);
+  border: 1px solid var(--color-blue-alpha-20);
+}
+
+.badge-primary {
+  background: var(--color-fuerte-blue);
+  color: var(--color-deep-space);
+  border-color: var(--color-fuerte-blue);
+}
+
+.badge-danger {
+  background: var(--color-volcanic-red);
+  color: var(--color-pure-white);
+  border-color: var(--color-volcanic-red);
+}
+
+.badge-success {
+  background: var(--color-metallic-silver);
+  color: var(--color-deep-space);
+  border-color: var(--color-metallic-silver);
+}
+
+/* ===== TOOLTIPS ===== */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-content {
+  position: absolute;
+  bottom: calc(100% + var(--space-sm));
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-deep-space);
+  color: var(--color-pure-white);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-blue-alpha-20);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--duration-fast) var(--ease-in-out);
+  z-index: var(--z-tooltip);
+}
+
+.tooltip-content::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--color-deep-space);
+}
+
+.tooltip:hover .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===== MODALS ===== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 16, 0.9);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--color-deep-space);
+  border: 1px solid var(--color-blue-alpha-20);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.9) translateY(20px);
+  transition: all var(--duration-normal) var(--ease-chaos);
+}
+
+.modal-overlay.active .modal {
+  transform: scale(1) translateY(0);
+}
+
+/* ===== PROGRESS BARS ===== */
+
+.progress {
+  width: 100%;
+  height: 8px;
+  background: var(--color-black-alpha-80);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--gradient-order);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-slow) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: metallicShine 2s linear infinite;
+}
+
+/* ===== LOADING STATES ===== */
+
+.loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.loader-orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--color-blue-alpha-20);
+  border-top-color: var(--color-fuerte-blue);
+  border-radius: 50%;
+  animation: orbit 1s linear infinite;
+}
+
+.loader-chaos {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.loader-chaos span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--color-fuerte-blue);
+  border-radius: 50%;
+  animation: chaosToOrder 1.2s var(--ease-chaos) infinite;
+}
+
+.loader-chaos span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader-chaos span:nth-child(3) {
+  animation-delay: 0.4s;
+} 

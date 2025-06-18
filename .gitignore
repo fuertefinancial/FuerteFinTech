@@ -93,8 +93,9 @@ bower_components/
 dist/
 build/
 out/
+.next/
+.nuxt/
 .cache/
-.parcel-cache/
 
 # Logs and Databases
 # ==================
@@ -142,4 +143,31 @@ temp/
 *.map
 .jekyll-cache/
 .jekyll-metadata
-_site/ 
+_site/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Testing
+coverage/
+.nyc_output/
+
+# OS generated files
+.DS_Store?
+.AppleDouble
+.LSOverride
+Icon
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Package manager locks (uncomment one based on your choice)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml 

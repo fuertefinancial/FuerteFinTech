@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuerte Financial Technologies - Design System</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../styles/variables.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    
+    <style>
+        /* Demo-specific styles */
+        .section {
+            padding: var(--space-4xl) 0;
+            border-bottom: 1px solid var(--color-blue-alpha-10);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .color-swatch {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            border-radius: var(--radius-sm);
+            background: var(--color-black-alpha-70);
+        }
+        
+        .color-box {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-blue-alpha-20);
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--color-volcanic-red);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+        
+        .particle.processed {
+            background: var(--color-fuerte-blue);
+            animation: orbit 10s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section chaos-field">
+        <div class="hero-particles" id="particleContainer"></div>
+        <div class="container">
+            <h1 class="animate-chaos-to-order gradient-metallic" style="text-align: center;">
+                FUERTE FINANCIAL TECHNOLOGIES
+            </h1>
+            <p class="text-center animate-chaos-to-order delay-200" style="font-size: var(--text-xl); color: var(--color-text-secondary);">
+                Harnessing Chaos, Engineering Alpha
+            </p>
+            <div class="text-center" style="margin-top: var(--space-2xl);">
+                <button class="btn btn-primary btn-lg animate-chaos-to-order delay-400">
+                    Explore the System
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color System -->
+    <section class="section">
+        <div class="container">
+            <h2 class="scroll-reveal">Color System</h2>
+            <p class="scroll-reveal delay-100">Our palette represents the transformation from chaos to order.</p>
+            
+            <div class="demo-grid scroll-reveal delay-200">
+                <div class="color-swatch">
+                    <div class="color-box" style="background: var(--color-deep-space);"></div>
+                    <div>
+                        <strong>Deep Space Black</strong><br>
+                        <code>#0A0A10</code>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box glow-blue" style="background: var(--color-fuerte-blue);"></div>
+                    <div>
+                        <strong>Fuerte Blue</strong><br>
+                        <code>#00BFFF</code>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box glow-red" style="background: var(--color-volcanic-red);"></div>
+                    <div>
+                        <strong>Volcanic Red</strong><br>
+                        <code>#FF3300</code>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box glow-silver" style="background: var(--color-metallic-silver);"></div>
+                    <div>
+                        <strong>Metallic Silver</strong><br>
+                        <code>#C0C0C0</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="section">
+        <div class="container">
+            <h2 class="scroll-reveal">Typography</h2>
+            <div class="demo-grid scroll-reveal delay-100">
+                <div>
+                    <h1>Display Heading</h1>
+                    <p>Space Grotesk - Bold</p>
+                </div>
+                <div>
+                    <h2>Section Heading</h2>
+                    <p>Space Grotesk - Semibold</p>
+                </div>
+                <div>
+                    <h3>Subsection Heading</h3>
+                    <p>Space Grotesk - Semibold</p>
+                </div>
+                <div>
+                    <p>Body text uses Inter for optimal readability and modern appearance.</p>
+                    <code>const alpha = harnessChaos();</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components -->
+    <section class="section">
+        <div class="container">
+            <h2 class="scroll-reveal">Components</h2>
+            
+            <!-- Buttons -->
+            <h3 class="scroll-reveal delay-100">Buttons</h3>
+            <div class="demo-grid scroll-reveal delay-200">
+                <button class="btn btn-primary">Primary Action</button>
+                <button class="btn btn-secondary">Secondary Action</button>
+                <button class="btn btn-danger">Danger Action</button>
+                <button class="btn btn-ghost">Ghost Action</button>
+            </div>
+            
+            <!-- Cards -->
+            <h3 class="scroll-reveal delay-300" style="margin-top: var(--space-2xl);">Cards</h3>
+            <div class="demo-grid scroll-reveal delay-400">
+                <div class="card hover-energy">
+                    <div class="card-header">
+                        <h4 class="card-title">Data Processing</h4>
+                        <span class="badge badge-primary">Active</span>
+                    </div>
+                    <p>Transform volatile market data into structured insights.</p>
+                </div>
+                
+                <div class="card card-data hover-energy">
+                    <div class="metric">87.3%</div>
+                    <div class="label">Algorithm Efficiency</div>
+                </div>
+            </div>
+            
+            <!-- Forms -->
+            <h3 class="scroll-reveal delay-500" style="margin-top: var(--space-2xl);">Forms</h3>
+            <div class="demo-grid scroll-reveal delay-600">
+                <div class="form-group">
+                    <label class="form-label">Input Field</label>
+                    <input type="text" class="form-input" placeholder="Enter value...">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Select Field</label>
+                    <select class="form-select">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations -->
+    <section class="section">
+        <div class="container">
+            <h2 class="scroll-reveal">Motion Language</h2>
+            <p class="scroll-reveal delay-100">Every animation tells the story of chaos becoming order.</p>
+            
+            <div class="demo-grid scroll-reveal delay-200">
+                <div class="card text-center">
+                    <div class="loader">
+                        <div class="loader-orbit"></div>
+                    </div>
+                    <p style="margin-top: var(--space-md);">Orbital Loading</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="loader-chaos">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p style="margin-top: var(--space-md);">Chaos Loading</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 75%;"></div>
+                    </div>
+                    <p style="margin-top: var(--space-md);">Progress Indicator</p>
+                </div>
+                
+                <div class="card text-center glitch-text" data-text="VOLATILITY">
+                    VOLATILITY
+                    <p style="margin-top: var(--space-md);">Glitch Effect</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Effects -->
+    <section class="section data-grid">
+        <div class="container">
+            <h2 class="scroll-reveal">Special Effects</h2>
+            <div class="demo-grid scroll-reveal delay-100">
+                <div class="card glass">
+                    <h4>Glassmorphism</h4>
+                    <p>Transparent layers with depth</p>
+                </div>
+                
+                <div class="card energy-border">
+                    <h4>Energy Border</h4>
+                    <p>Dynamic gradient borders</p>
+                </div>
+                
+                <div class="tooltip">
+                    <button class="btn btn-primary">Hover for Tooltip</button>
+                    <div class="tooltip-content">
+                        Advanced information display
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Particle animation demo
+        const particleContainer = document.getElementById('particleContainer');
+        const particleCount = 50;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.setProperty('--angle', Math.random() * Math.PI * 2);
+            particle.style.setProperty('--radius', 50 + Math.random() * 100);
+            particle.style.setProperty('--random-x', Math.random() * 2 - 1);
+            particle.style.setProperty('--random-y', Math.random() * 2 - 1);
+            particle.style.setProperty('--random-r', Math.random() * 2 - 1);
+            
+            // Simulate chaos to order
+            setTimeout(() => {
+                particle.classList.add('processed');
+                particle.style.setProperty('--orbit-radius', 100 + i * 5 + 'px');
+            }, 1000 + i * 50);
+            
+            particleContainer.appendChild(particle);
+        }
+        
+        // Scroll reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Parallax scroll
+        let scrollY = 0;
+        window.addEventListener('scroll', () => {
+            scrollY = window.pageYOffset;
+            document.documentElement.style.setProperty('--scroll-y', scrollY);
+        });
+    </script>
+</body>
+</html> 

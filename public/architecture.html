@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuerte - Information Architecture</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../styles/variables.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    
+    <!-- Mermaid for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    
+    <style>
+        .architecture-section {
+            padding: var(--space-4xl) 0;
+            border-bottom: 1px solid var(--color-blue-alpha-10);
+        }
+        
+        .sitemap {
+            display: grid;
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .site-section {
+            background: var(--color-black-alpha-80);
+            border: 1px solid var(--color-blue-alpha-20);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .site-section.public {
+            border-color: var(--color-fuerte-blue);
+        }
+        
+        .site-section.private {
+            border-color: var(--color-volcanic-red);
+            background: rgba(255, 51, 0, 0.05);
+        }
+        
+        .site-tree {
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+        }
+        
+        .site-tree .branch {
+            color: var(--color-fuerte-blue);
+        }
+        
+        .site-tree .leaf {
+            color: var(--color-pure-white);
+            margin-left: var(--space-xl);
+        }
+        
+        .flow-diagram {
+            background: var(--color-black-alpha-70);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            margin-top: var(--space-xl);
+            backdrop-filter: blur(10px);
+        }
+        
+        .mermaid {
+            text-align: center;
+        }
+        
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .architecture-card {
+            text-align: center;
+            padding: var(--space-2xl);
+        }
+        
+        .architecture-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-md);
+            background: var(--gradient-order);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-2xl);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Design System</a>
+                <a href="architecture.html" class="nav-link active">Architecture</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="animate-chaos-to-order gradient-metallic text-center">
+                Information Architecture
+            </h1>
+            <p class="text-center animate-chaos-to-order delay-200" style="font-size: var(--text-xl); color: var(--color-text-secondary);">
+                Bifurcated Structure: Public Innovation & Private Excellence
+            </p>
+        </div>
+    </section>
+
+    <!-- Dual Identity -->
+    <section class="architecture-section">
+        <div class="container">
+            <h2 class="scroll-reveal">Dual Digital Identity</h2>
+            <div class="architecture-grid scroll-reveal delay-100">
+                <div class="card hover-energy">
+                    <div class="architecture-icon">🌐</div>
+                    <h3 class="text-primary">Public Marketing Site</h3>
+                    <p>www.fuerte.tech</p>
+                    <ul style="text-align: left; list-style: none;">
+                        <li>✓ Dynamic & Narrative-Driven</li>
+                        <li>✓ Tech-Forward Branding</li>
+                        <li>✓ Thought Leadership</li>
+                        <li>✓ Lead Qualification</li>
+                    </ul>
+                </div>
+                <div class="card hover-energy">
+                    <div class="architecture-icon">🔒</div>
+                    <h3 class="text-danger">Investor Portal</h3>
+                    <p>investors.fuerte.tech</p>
+                    <ul style="text-align: left; list-style: none;">
+                        <li>✓ Secure & Data-Driven</li>
+                        <li>✓ Institutional-Grade</li>
+                        <li>✓ Real-Time Analytics</li>
+                        <li>✓ Document Vault</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Maps -->
+    <section class="architecture-section">
+        <div class="container">
+            <h2 class="scroll-reveal">Site Structure</h2>
+            
+            <div class="sitemap">
+                <!-- Public Site -->
+                <div class="site-section public scroll-reveal delay-100">
+                    <h3 class="text-primary">Public Marketing Site</h3>
+                    <pre class="site-tree">
+<span class="branch">www.fuerte.tech/</span>
+<span class="leaf">├── / (Home)</span>
+<span class="leaf">│   ├── Hero WebGL Visualization</span>
+<span class="leaf">│   ├── Value Proposition</span>
+<span class="leaf">│   └── Investor Gateway</span>
+<span class="leaf">├── /about</span>
+<span class="leaf">│   ├── /story</span>
+<span class="leaf">│   ├── /team</span>
+<span class="leaf">│   ├── /careers</span>
+<span class="leaf">│   └── /press</span>
+<span class="leaf">├── /philosophy</span>
+<span class="leaf">├── /strategies</span>
+<span class="leaf">│   ├── /ai-quant</span>
+<span class="leaf">│   ├── /digital-alpha</span>
+<span class="leaf">│   └── /market-neutral</span>
+<span class="leaf">├── /insights</span>
+<span class="leaf">│   ├── /research</span>
+<span class="leaf">│   ├── /market-views</span>
+<span class="leaf">│   └── /technology</span>
+<span class="leaf">├── /contact</span>
+<span class="leaf">└── /legal</span>
+                    </pre>
+                </div>
+
+                <!-- Private Portal -->
+                <div class="site-section private scroll-reveal delay-200">
+                    <h3 class="text-danger">Investor Portal</h3>
+                    <pre class="site-tree">
+<span class="branch">investors.fuerte.tech/</span>
+<span class="leaf">├── / (Login Gateway)</span>
+<span class="leaf">│   ├── 2FA Authentication</span>
+<span class="leaf">│   └── Biometric Options</span>
+<span class="leaf">├── /dashboard</span>
+<span class="leaf">│   ├── Portfolio Overview</span>
+<span class="leaf">│   ├── Performance Metrics</span>
+<span class="leaf">│   └── Quick Actions</span>
+<span class="leaf">├── /portfolio</span>
+<span class="leaf">│   ├── /holdings</span>
+<span class="leaf">│   ├── /performance</span>
+<span class="leaf">│   └── /analytics</span>
+<span class="leaf">├── /documents</span>
+<span class="leaf">│   ├── /statements</span>
+<span class="leaf">│   ├── /reports</span>
+<span class="leaf">│   └── /tax</span>
+<span class="leaf">└── /communications</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Flows -->
+    <section class="architecture-section">
+        <div class="container">
+            <h2 class="scroll-reveal">User Journey Flows</h2>
+            
+            <!-- New Visitor Flow -->
+            <div class="flow-diagram scroll-reveal delay-100">
+                <h3>New Visitor Journey</h3>
+                <div class="mermaid">
+                    graph LR
+                        A[Landing Page] --> B{Legal<br/>Disclaimer}
+                        B -->|Accept| C[Explore Site]
+                        B -->|Decline| D[Exit]
+                        C --> E[View<br/>Strategies]
+                        E --> F[Request<br/>Information]
+                        F --> G[Qualification<br/>Form]
+                        G --> H[IR Contact]
+                        
+                        style A fill:#00BFFF,stroke:#00BFFF,color:#0A0A10
+                        style B fill:#FF3300,stroke:#FF3300,color:#FFF
+                        style C fill:#00BFFF,stroke:#00BFFF,color:#0A0A10
+                        style E fill:#00BFFF,stroke:#00BFFF,color:#0A0A10
+                        style G fill:#C0C0C0,stroke:#C0C0C0,color:#0A0A10
+                        style H fill:#C0C0C0,stroke:#C0C0C0,color:#0A0A10
+                </div>
+            </div>
+
+            <!-- Qualified Investor Flow -->
+            <div class="flow-diagram scroll-reveal delay-200">
+                <h3>Qualified Investor Journey</h3>
+                <div class="mermaid">
+                    graph LR
+                        A[Email<br/>Invitation] --> B[Portal<br/>Login]
+                        B --> C[2FA<br/>Verification]
+                        C --> D[Dashboard]
+                        D --> E{User<br/>Action}
+                        E -->|Performance| F[Portfolio<br/>Analytics]
+                        E -->|Documents| G[Document<br/>Vault]
+                        E -->|Contact| H[Secure<br/>Messaging]
+                        
+                        style A fill:#C0C0C0,stroke:#C0C0C0,color:#0A0A10
+                        style B fill:#FF3300,stroke:#FF3300,color:#FFF
+                        style C fill:#FF3300,stroke:#FF3300,color:#FFF
+                        style D fill:#00BFFF,stroke:#00BFFF,color:#0A0A10
+                        style F fill:#00BFFF,stroke:#00BFFF,color:#0A0A10
+                        style G fill:#00BFFF,stroke:#00BFFF,color:#0A0A10
+                        style H fill:#00BFFF,stroke:#00BFFF,color:#0A0A10
+                </div>
+            </div>
+
+            <!-- Velvet Rope Transition -->
+            <div class="flow-diagram scroll-reveal delay-300">
+                <h3>Public to Private Transition - "The Velvet Rope"</h3>
+                <div class="mermaid">
+                    graph LR
+                        A[Public Site<br/>CTA] --> B{Qualification<br/>Check}
+                        B -->|Qualified| C[Portal<br/>Invitation]
+                        B -->|Not Qualified| D[Educational<br/>Content]
+                        C --> E[Account<br/>Creation]
+                        E --> F[KYC<br/>Process]
+                        F --> G[Portal<br/>Access]
+                        
+                        style A fill:#00BFFF,stroke:#00BFFF,color:#0A0A10
+                        style B fill:#FF3300,stroke:#FF3300,color:#FFF
+                        style C fill:#C0C0C0,stroke:#C0C0C0,color:#0A0A10
+                        style D fill:#00BFFF,stroke:#00BFFF,color:#0A0A10
+                        style E fill:#FF3300,stroke:#FF3300,color:#FFF
+                        style F fill:#FF3300,stroke:#FF3300,color:#FFF
+                        style G fill:#C0C0C0,stroke:#C0C0C0,color:#0A0A10
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Compliance -->
+    <section class="architecture-section">
+        <div class="container">
+            <h2 class="scroll-reveal">Security & Compliance Architecture</h2>
+            <div class="architecture-grid scroll-reveal delay-100">
+                <div class="card glass">
+                    <h4 class="text-primary">Legal Compliance</h4>
+                    <ul style="text-align: left; list-style: none; margin-top: var(--space-md);">
+                        <li>• Accredited Investor Disclaimers</li>
+                        <li>• SEC Regulatory Notices</li>
+                        <li>• GDPR/Privacy Compliance</li>
+                        <li>• Terms of Service</li>
+                    </ul>
+                </div>
+                <div class="card glass">
+                    <h4 class="text-primary">Technical Security</h4>
+                    <ul style="text-align: left; list-style: none; margin-top: var(--space-md);">
+                        <li>• SSL/TLS Encryption</li>
+                        <li>• 2FA + Biometrics</li>
+                        <li>• Session Management</li>
+                        <li>• Audit Trails</li>
+                    </ul>
+                </div>
+                <div class="card glass">
+                    <h4 class="text-primary">Data Protection</h4>
+                    <ul style="text-align: left; list-style: none; margin-top: var(--space-md);">
+                        <li>• Encrypted Storage</li>
+                        <li>• Secure APIs</li>
+                        <li>• Regular Backups</li>
+                        <li>• Access Controls</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({ 
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#00BFFF',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#00BFFF',
+                lineColor: '#00BFFF',
+                secondaryColor: '#FF3300',
+                tertiaryColor: '#C0C0C0',
+                background: '#0A0A10',
+                mainBkg: '#0A0A10',
+                secondBkg: '#1a1a20',
+                tertiaryBkg: '#2a2a30',
+                darkMode: true
+            }
+        });
+        
+        // Scroll reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html> 

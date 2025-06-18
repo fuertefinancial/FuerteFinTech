@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuerte - User Journey Demo</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../styles/variables.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/navigation.css">
+    <link rel="stylesheet" href="../styles/modals.css">
+    
+    <style>
+        body {
+            padding-top: 80px;
+        }
+        
+        .demo-section {
+            padding: var(--space-4xl) 0;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .journey-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-2xl);
+            margin-top: var(--space-3xl);
+        }
+        
+        .journey-card {
+            text-align: center;
+            padding: var(--space-2xl);
+        }
+        
+        .journey-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto var(--space-xl);
+            background: var(--gradient-order);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+        }
+    </style>
+</head>
+<body>
+    <!-- Public Site Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">
+                    FUERTE <span class="gradient-text">FINANCIAL</span>
+                </a>
+                
+                <nav class="nav-primary" id="navMenu">
+                    <a href="#" class="nav-link active">HOME</a>
+                    <a href="#" class="nav-link">ABOUT</a>
+                    <a href="#" class="nav-link">PHILOSOPHY</a>
+                    <a href="#" class="nav-link">STRATEGIES</a>
+                    <a href="#" class="nav-link">INSIGHTS</a>
+                    <a href="#" class="nav-link">CONTACT</a>
+                    
+                    <div class="nav-cta">
+                        <button class="btn btn-primary" onclick="showQualificationModal()">
+                            Investor Login
+                        </button>
+                    </div>
+                </nav>
+                
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="demo-section chaos-field">
+        <div class="container">
+            <h1 class="animate-chaos-to-order gradient-metallic text-center">
+                User Journey Experience
+            </h1>
+            <p class="text-center animate-chaos-to-order delay-200" style="font-size: var(--text-xl); color: var(--color-text-secondary);">
+                Experience the Institutional Investor's Path
+            </p>
+            
+            <div class="journey-demo">
+                <div class="card glass journey-card animate-chaos-to-order delay-300">
+                    <div class="journey-icon">👤</div>
+                    <h3>New Visitor</h3>
+                    <p>First-time visitor exploring our strategies</p>
+                    <button class="btn btn-secondary" onclick="simulateNewVisitor()">
+                        Simulate Journey
+                    </button>
+                </div>
+                
+                <div class="card glass journey-card animate-chaos-to-order delay-400">
+                    <div class="journey-icon">💼</div>
+                    <h3>Qualified Investor</h3>
+                    <p>Accredited investor accessing the portal</p>
+                    <button class="btn btn-secondary" onclick="simulateQualifiedInvestor()">
+                        Simulate Journey
+                    </button>
+                </div>
+                
+                <div class="card glass journey-card animate-chaos-to-order delay-500">
+                    <div class="journey-icon">🔐</div>
+                    <h3>Portal Access</h3>
+                    <p>Experience the velvet rope transition</p>
+                    <button class="btn btn-secondary" onclick="showVelvetRope()">
+                        Simulate Journey
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Disclaimer Modal -->
+    <div class="legal-modal-overlay" id="legalModal">
+        <div class="legal-modal">
+            <div class="legal-header">
+                <h3 class="legal-title">Important Legal Notice</h3>
+                <p class="legal-subtitle">Please read carefully before proceeding</p>
+            </div>
+            
+            <div class="legal-content">
+                <h4>Accredited Investor Disclaimer</h4>
+                <p>This website is intended solely for persons who qualify as "accredited investors" or "qualified purchasers" as defined under applicable securities laws.</p>
+                
+                <h4>Investment Risks</h4>
+                <p>Alternative investment strategies involve substantial risks that may be greater than those associated with traditional investments. These investments are speculative, involve a high degree of risk, and are designed for sophisticated investors who are able to bear the loss of their entire investment.</p>
+                
+                <h4>No Offer or Solicitation</h4>
+                <p>The information contained in this website does not constitute an offer to sell or a solicitation of an offer to buy any securities in any jurisdiction where such offer or solicitation would be unlawful.</p>
+                
+                <h4>Regulatory Notice</h4>
+                <p>Fuerte Financial Technologies is registered with applicable regulatory authorities. Performance data and investment strategies are subject to verification and audit.</p>
+            </div>
+            
+            <div class="legal-checkbox">
+                <input type="checkbox" id="acceptTerms">
+                <label for="acceptTerms">
+                    I confirm that I have read and understood the above disclaimers and that I am an accredited investor or qualified purchaser under applicable securities laws.
+                </label>
+            </div>
+            
+            <div class="legal-actions">
+                <button class="btn btn-ghost" onclick="declineTerms()">
+                    Decline
+                </button>
+                <button class="btn btn-danger" onclick="acceptTerms()" id="acceptButton" disabled>
+                    Accept & Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Qualification Modal -->
+    <div class="legal-modal-overlay" id="qualificationModal">
+        <div class="legal-modal qualification-modal">
+            <div class="legal-header">
+                <h3 class="legal-title text-primary">Investor Qualification</h3>
+                <p class="legal-subtitle">Please confirm your investor status</p>
+            </div>
+            
+            <div class="verification-steps">
+                <div class="verification-step active">
+                    <div class="verification-step-number">1</div>
+                    <span class="verification-step-label">Qualification</span>
+                </div>
+                <div class="verification-step">
+                    <div class="verification-step-number">2</div>
+                    <span class="verification-step-label">Verification</span>
+                </div>
+                <div class="verification-step">
+                    <div class="verification-step-number">3</div>
+                    <span class="verification-step-label">Access</span>
+                </div>
+            </div>
+            
+            <form class="qualification-form">
+                <div class="qualification-section">
+                    <h4>Investor Type</h4>
+                    <div class="qualification-options">
+                        <label class="qualification-option">
+                            <input type="radio" name="investorType" value="individual">
+                            <span>Individual Accredited Investor</span>
+                        </label>
+                        <label class="qualification-option">
+                            <input type="radio" name="investorType" value="institutional">
+                            <span>Institutional Investor</span>
+                        </label>
+                        <label class="qualification-option">
+                            <input type="radio" name="investorType" value="family">
+                            <span>Family Office</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="qualification-section">
+                    <h4>Investment Range</h4>
+                    <div class="qualification-options">
+                        <label class="qualification-option">
+                            <input type="radio" name="investmentRange" value="1m">
+                            <span>$1M - $5M</span>
+                        </label>
+                        <label class="qualification-option">
+                            <input type="radio" name="investmentRange" value="5m">
+                            <span>$5M - $25M</span>
+                        </label>
+                        <label class="qualification-option">
+                            <input type="radio" name="investmentRange" value="25m">
+                            <span>$25M+</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="legal-actions">
+                    <button type="button" class="btn btn-ghost" onclick="closeModal('qualificationModal')">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="proceedToPortal()">
+                        Continue to Portal
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Velvet Rope Transition -->
+    <div class="velvet-rope-overlay" id="velvetRopeOverlay">
+        <div class="velvet-rope-content">
+            <div class="velvet-rope-icon">🔐</div>
+            <h2 class="velvet-rope-title">Entering Secure Portal</h2>
+            <p class="velvet-rope-message">Transitioning to institutional-grade environment...</p>
+            <div class="loader">
+                <div class="loader-orbit"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portal Login Modal -->
+    <div class="legal-modal-overlay" id="portalLoginModal">
+        <div class="legal-modal portal-login-modal">
+            <div class="portal-login-header">
+                <div class="portal-login-logo gradient-metallic">FUERTE</div>
+                <p class="text-muted">Investor Portal Access</p>
+            </div>
+            
+            <div class="portal-security-notice">
+                <span class="icon">🔒</span>
+                <span>This is a secure, encrypted connection. Your data is protected.</span>
+            </div>
+            
+            <form class="portal-login-form">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="investor@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" placeholder="••••••••">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Two-Factor Authentication</label>
+                    <input type="text" class="form-input" placeholder="Enter 6-digit code">
+                </div>
+                
+                <button type="button" class="btn btn-danger btn-lg" onclick="simulatePortalLogin()">
+                    Secure Login
+                </button>
+                
+                <p class="text-center text-muted" style="margin-top: var(--space-xl);">
+                    <a href="#" class="text-primary">Forgot Password?</a> | 
+                    <a href="#" class="text-primary">Contact Support</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Legal disclaimer checkbox
+        const acceptCheckbox = document.getElementById('acceptTerms');
+        const acceptButton = document.getElementById('acceptButton');
+        
+        acceptCheckbox.addEventListener('change', (e) => {
+            acceptButton.disabled = !e.target.checked;
+        });
+        
+        // Modal functions
+        function showModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+        
+        // Journey simulations
+        function simulateNewVisitor() {
+            setTimeout(() => showModal('legalModal'), 500);
+        }
+        
+        function acceptTerms() {
+            if (acceptCheckbox.checked) {
+                closeModal('legalModal');
+                // Continue browsing
+                alert('Welcome! You may now explore our strategies and insights.');
+            }
+        }
+        
+        function declineTerms() {
+            closeModal('legalModal');
+            alert('Thank you for visiting. You must accept the terms to access this site.');
+        }
+        
+        function simulateQualifiedInvestor() {
+            showModal('qualificationModal');
+        }
+        
+        function showQualificationModal() {
+            showModal('qualificationModal');
+        }
+        
+        function proceedToPortal() {
+            closeModal('qualificationModal');
+            showVelvetRope();
+        }
+        
+        function showVelvetRope() {
+            showModal('velvetRopeOverlay');
+            setTimeout(() => {
+                closeModal('velvetRopeOverlay');
+                showModal('portalLoginModal');
+            }, 3000);
+        }
+        
+        function simulatePortalLogin() {
+            closeModal('portalLoginModal');
+            alert('Login successful! Redirecting to investor dashboard...');
+        }
+        
+        // Auto-show disclaimer on first visit (demo)
+        setTimeout(() => {
+            if (!sessionStorage.getItem('disclaimerShown')) {
+                showModal('legalModal');
+                sessionStorage.setItem('disclaimerShown', 'true');
+            }
+        }, 2000);
+        
+        // Scroll header effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html> 

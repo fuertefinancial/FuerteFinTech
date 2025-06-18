@@ -1,0 +1,382 @@
+/* Data Deluge Styles */
+.dataDelugeContainer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.dataCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dataOverlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background: rgba(10, 10, 16, 0.8);
+  padding: 20px;
+  border: 1px solid #333;
+  backdrop-filter: blur(10px);
+}
+
+.dataTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #00BFFF;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.dataStats {
+  display: flex;
+  gap: 32px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statLabel {
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 24px;
+  color: #FF3300;
+  font-weight: 500;
+}
+
+/* Signal From Noise Styles */
+.signalContainer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signalSvg {
+  max-width: 100%;
+  height: auto;
+}
+
+.signalOverlay {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: rgba(10, 10, 16, 0.8);
+  padding: 20px;
+  border: 1px solid #333;
+  backdrop-filter: blur(10px);
+}
+
+.signalTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #00BFFF;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.signalMetrics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metricItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.metricLabel {
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.metricValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 18px;
+  color: #00BFFF;
+}
+
+/* Quantitative Rigor Styles */
+.rigorContainer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.neuralCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rigorOverlay {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background: rgba(10, 10, 16, 0.8);
+  padding: 20px;
+  border: 1px solid #333;
+  backdrop-filter: blur(10px);
+}
+
+.rigorTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #00BFFF;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.rigorStats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Automated Execution Styles */
+.executionContainer {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  padding: 40px;
+}
+
+.tradingInterface {
+  background: rgba(10, 10, 16, 0.95);
+  border: 1px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.interfaceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.interfaceTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  color: #00BFFF;
+  margin: 0;
+}
+
+.interfaceStats {
+  display: flex;
+  gap: 16px;
+}
+
+.statBadge {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: #0F0;
+  background: rgba(0, 255, 0, 0.1);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.orderBook {
+  padding: 20px;
+}
+
+.orderHeader {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 0.8fr 0.8fr 1.2fr 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.orderRow {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 0.8fr 0.8fr 1.2fr 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  color: #C0C0C0;
+  transition: all 0.3s ease;
+}
+
+.orderRow:hover {
+  background: rgba(0, 191, 255, 0.05);
+}
+
+.symbol {
+  color: #FFF;
+  font-weight: 500;
+}
+
+.buy {
+  color: #0F0;
+}
+
+.sell {
+  color: #FF3300;
+}
+
+.statusPENDING {
+  color: #666;
+}
+
+.statusROUTING {
+  color: #FFA500;
+}
+
+.statusEXECUTING {
+  color: #00BFFF;
+}
+
+.statusFILLED {
+  color: #0F0;
+}
+
+.timestamp {
+  font-size: 11px;
+  color: #666;
+}
+
+.executionMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  border-top: 1px solid #333;
+}
+
+.metricCard {
+  text-align: center;
+}
+
+.metricCard h4 {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.metricValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 28px;
+  color: #00BFFF;
+  font-weight: 500;
+}
+
+/* Generating Alpha Styles */
+.alphaContainer {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  padding: 40px;
+}
+
+.alphaSvg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.alphaLegend {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 32px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legendLine {
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.legendLabel {
+  font-size: 14px;
+  color: #999;
+}
+
+.legendValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+#market-return {
+  color: #FF3300;
+}
+
+#fuerte-return {
+  color: #00BFFF;
+}
+
+.alphaStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+  padding: 32px;
+  background: rgba(10, 10, 16, 0.5);
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.alphaStat {
+  text-align: center;
+}
+
+.alphaStat h4 {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.alphaValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 32px;
+  color: #00BFFF;
+  font-weight: 500;
+}

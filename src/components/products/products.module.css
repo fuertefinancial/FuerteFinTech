@@ -1,0 +1,355 @@
+/* Product Card Styles */
+.productCard {
+  position: relative;
+  background: rgba(10, 10, 16, 0.95);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--product-color);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.cardBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.spiralCanvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+.productName {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFF;
+  margin-bottom: 8px;
+}
+
+.productTagline {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 24px;
+}
+
+.productMetrics {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.metricLabel {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.metricValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  color: #00BFFF;
+  font-weight: 600;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.minimumInvestment {
+  font-size: 12px;
+  color: #999;
+}
+
+.riskLevel {
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.riskLevel[data-risk="moderate"] {
+  background: rgba(0, 191, 255, 0.2);
+  color: #00BFFF;
+}
+
+.riskLevel[data-risk="high"] {
+  background: rgba(255, 51, 0, 0.2);
+  color: #FF3300;
+}
+
+.riskLevel[data-risk="very-high"] {
+  background: rgba(255, 51, 0, 0.3);
+  color: #FF6633;
+}
+
+.cardHoverEffect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--product-color-rgb), 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.productCard:hover .cardHoverEffect {
+  left: 100%;
+}
+
+/* Product Modal Styles */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  background: #0A0A10;
+  border: 1px solid #333;
+  border-radius: 16px;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+.modalClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modalClose:hover {
+  border-color: #00BFFF;
+  transform: rotate(90deg);
+}
+
+.modalClose svg {
+  width: 20px;
+  height: 20px;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.modalClose:hover svg {
+  color: #00BFFF;
+}
+
+.modalHeader {
+  padding: 40px 40px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.modalTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.modalTagline {
+  font-size: 18px;
+  color: #999;
+}
+
+.modalBody {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+.modalDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modalDescription p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #C0C0C0;
+}
+
+.modalMetrics {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(10, 10, 16, 0.5);
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.modalMetric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalMetricLabel {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modalMetricValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.modalVisualization {
+  background: rgba(10, 10, 16, 0.3);
+  border-radius: 12px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.visualizationTitle {
+  font-size: 14px;
+  color: #00BFFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.modalFooter {
+  padding: 24px 40px 40px;
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+.modalCta {
+  padding: 16px 48px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0A0A10;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.modalCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 191, 255, 0.3);
+}
+
+.modalDisclaimer {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .modalBody {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .modalHeader,
+  .modalBody,
+  .modalFooter {
+    padding: 20px;
+  }
+  
+  .modalTitle {
+    font-size: 28px;
+  }
+} 
