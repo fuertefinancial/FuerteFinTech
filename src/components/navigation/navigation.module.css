@@ -1,0 +1,128 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 16, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #333;
+  z-index: 1000;
+  padding: 16px 0;
+}
+
+.navContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.navLogo:hover {
+  opacity: 0.9;
+}
+
+.logoText {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #00BFFF;
+  letter-spacing: 2px;
+}
+
+.logoPlaceholder {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #00BFFF;
+  background: rgba(0, 191, 255, 0.1);
+  border: 1px solid #00BFFF;
+  border-radius: 4px;
+}
+
+.livingLogo {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+}
+
+.livingLogo canvas {
+  display: block;
+}
+
+.livingLogoMobile {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+/* Loading state animation */
+@keyframes logoParticleSwirl {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(2);
+    opacity: 0;
+  }
+}
+
+.logoLoadingParticles {
+  position: absolute;
+  inset: -20px;
+  pointer-events: none;
+  animation: logoParticleSwirl 1s ease-out forwards;
+}
+
+.navLinks {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  color: #999;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLinks a:hover {
+  color: #FFF;
+}
+
+.navLinks a.active {
+  color: #00BFFF;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    gap: 20px;
+  }
+  
+  .navLinks a {
+    font-size: 14px;
+  }
+} 

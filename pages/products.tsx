@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
+import Navigation from '../src/components/navigation/Navigation'
 import ProductCard from '../src/components/products/ProductCard'
 import ProductModal from '../src/components/products/ProductModal'
 import styles from '../src/styles/products.module.css'
@@ -60,6 +61,8 @@ export default function ProductsPage() {
         <title>Products & Services - Fuerte Financial Technologies</title>
         <meta name="description" content="Explore our innovative investment products powered by AI and blockchain technology." />
       </Head>
+      
+      <Navigation />
       
       <main className={styles.productsContainer}>
         {/* Hero Section */}

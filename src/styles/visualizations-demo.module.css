@@ -1,0 +1,136 @@
+/* Visualizations Demo Page Styles */
+.demoContainer {
+  min-height: 100vh;
+  background: #0A0A10;
+  padding-top: 100px;
+}
+
+.demoHero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 191, 255, 0.05));
+}
+
+.demoHero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00BFFF, #0088CC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.demoHero p {
+  font-size: 20px;
+  color: #999;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.demoSection {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #333;
+}
+
+.demoSection:last-of-type {
+  border-bottom: none;
+}
+
+.demoSection h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #FFF;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.demoDescription {
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.chartWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 1px solid #333;
+  overflow-x: auto;
+}
+
+/* Usage Section */
+.usageSection {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(0, 191, 255, 0.02);
+}
+
+.usageSection h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #00BFFF;
+  margin-bottom: 30px;
+}
+
+.codeExample {
+  background: #0A0A10;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.codeExample pre {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  color: #00BFFF;
+  line-height: 1.5;
+}
+
+.usageNote {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .demoHero h1 {
+    font-size: 36px;
+  }
+  
+  .demoHero p {
+    font-size: 18px;
+  }
+  
+  .demoSection {
+    padding: 60px 20px;
+  }
+  
+  .demoSection h2 {
+    font-size: 24px;
+  }
+  
+  .chartWrapper {
+    padding: 20px;
+    overflow-x: scroll;
+  }
+  
+  .codeExample {
+    font-size: 12px;
+  }
+} 

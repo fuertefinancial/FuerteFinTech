@@ -101,10 +101,12 @@ export default function ProcessedParticles(props: ProcessedParticlesProps) {
   // Update uniforms
   useFrame((state) => {
     if (meshRef.current) {
-      const uniforms = meshRef.current.material.uniforms
-      uniforms.uTime.value = state.clock.elapsedTime
-      uniforms.uScrollProgress.value = scrollProgress.current
-      uniforms.uPhase.value = processingPhase.current
+      const material = meshRef.current.material as THREE.ShaderMaterial
+      if (material && material.uniforms) {
+        material.uniforms.uTime.value = state.clock.elapsedTime
+        material.uniforms.uScrollProgress.value = scrollProgress.current
+        material.uniforms.uPhase.value = processingPhase.current
+      }
     }
   })
   

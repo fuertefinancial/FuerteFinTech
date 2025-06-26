@@ -220,6 +220,97 @@
   }
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .philosophyContainer {
+    padding-top: 60px;
+  }
+  
+  .section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+  
+  .contentWrapper {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .textContent {
+    flex: 1;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+  
+  .visualWrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 0;
+  }
+  
+  .visualWrapper[data-pin="true"] {
+    position: relative;
+    top: auto;
+  }
+  
+  .sectionTitle {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .sectionNumber {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
+  .sectionText {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* CTA Section Mobile */
+  .ctaSection {
+    padding: 60px 20px;
+  }
+  
+  .ctaTitle {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  
+  .ctaText {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .ctaButton {
+    padding: 16px 32px;
+    font-size: 14px;
+  }
+  
+  /* Touch-friendly interactions */
+  .ctaButton:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 28px;
+  }
+  
+  .sectionNumber {
+    font-size: 36px;
+  }
+  
+  .visualWrapper {
+    height: 300px;
+  }
+}
+
 /* Animation Classes */
 @keyframes fadeInUp {
   from {

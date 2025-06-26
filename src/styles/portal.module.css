@@ -1,0 +1,1155 @@
+/* Portal Base Styles - Minimalist & Data-First */
+:root {
+  --portal-bg: #000000;
+  --portal-surface: #0A0A0A;
+  --portal-border: #1a1a1a;
+  --portal-text: #E0E0E0;
+  --portal-text-dim: #808080;
+  --portal-accent: #00FF00;
+  --portal-error: #FF0000;
+  --portal-warning: #FFA500;
+}
+
+/* Login Page */
+.loginContainer {
+  min-height: 100vh;
+  background: var(--portal-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loginBox {
+  background: var(--portal-surface);
+  border: 1px solid var(--portal-border);
+  border-radius: 0;
+  padding: 48px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.portalLogo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--portal-text);
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.portalTagline {
+  font-size: 12px;
+  color: var(--portal-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-size: 12px;
+  color: var(--portal-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.formGroup input {
+  background: var(--portal-bg);
+  border: 1px solid var(--portal-border);
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--portal-text);
+  font-family: 'Fira Code', monospace;
+  transition: border-color 0.2s;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--portal-accent);
+}
+
+.twoFactorHeader {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.twoFactorHeader h2 {
+  font-size: 18px;
+  color: var(--portal-text);
+  margin-bottom: 8px;
+}
+
+.twoFactorHeader p {
+  font-size: 12px;
+  color: var(--portal-text-dim);
+}
+
+.twoFactorInput {
+  font-size: 24px !important;
+  text-align: center;
+  letter-spacing: 8px;
+  font-weight: 600;
+}
+
+.loginButton {
+  background: var(--portal-accent);
+  color: var(--portal-bg);
+  border: none;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.loginButton:hover {
+  opacity: 0.8;
+}
+
+.backButton {
+  background: transparent;
+  color: var(--portal-text-dim);
+  border: 1px solid var(--portal-border);
+  padding: 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.backButton:hover {
+  color: var(--portal-text);
+  border-color: var(--portal-text-dim);
+}
+
+.errorMessage {
+  color: var(--portal-error);
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
+}
+
+.loginFooter {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--portal-border);
+  text-align: center;
+}
+
+.securityNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--portal-text-dim);
+  margin-bottom: 12px;
+}
+
+.supportLink {
+  font-size: 12px;
+  color: var(--portal-text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.supportLink:hover {
+  color: var(--portal-text);
+}
+
+/* Dashboard Styles */
+.dashboardContainer {
+  min-height: 100vh;
+  background: var(--portal-bg);
+  color: var(--portal-text);
+  padding: 0;
+}
+
+.securityBar {
+  background: var(--portal-surface);
+  border-bottom: 1px solid var(--portal-border);
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--portal-text-dim);
+  font-family: 'Fira Code', monospace;
+}
+
+.sessionTimer {
+  color: var(--portal-warning);
+}
+
+.dashboardHeader {
+  padding: 32px 24px;
+  border-bottom: 1px solid var(--portal-border);
+}
+
+.dashboardHeader h1 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  color: var(--portal-text);
+}
+
+.welcomeText {
+  font-size: 14px;
+  color: var(--portal-text-dim);
+  margin-top: 8px;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--portal-border);
+  margin: 1px;
+}
+
+.metricCard {
+  background: var(--portal-surface);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metricCard h3 {
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--portal-text-dim);
+  margin: 0;
+}
+
+.metricValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--portal-accent);
+}
+
+.metricSubtext {
+  font-size: 12px;
+  color: var(--portal-text-dim);
+}
+
+.quickActions {
+  padding: 32px 24px;
+  border-bottom: 1px solid var(--portal-border);
+}
+
+.quickActions h2 {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--portal-text-dim);
+  margin-bottom: 20px;
+}
+
+.actionButtons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--portal-surface);
+  border: 1px solid var(--portal-border);
+  color: var(--portal-text);
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  border-color: var(--portal-accent);
+  color: var(--portal-accent);
+}
+
+.actionButton svg {
+  width: 20px;
+  height: 20px;
+  color: currentColor;
+}
+
+.recentActivity {
+  background: rgba(10, 255, 0, 0.02);
+  border: 1px solid rgba(10, 255, 0, 0.2);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.recentActivity h2 {
+  color: var(--portal-green);
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  font-family: var(--font-display);
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activityItem {
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  border-left: 2px solid var(--portal-green);
+}
+
+.activityIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.activityContent {
+  flex: 1;
+}
+
+.activityTitle {
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+  font-size: 14px;
+}
+
+.activityDate {
+  color: rgba(192, 192, 192, 0.6);
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Portal Layout */
+.portalLayout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--portal-bg);
+}
+
+.portalSidebar {
+  width: 200px;
+  background: var(--portal-surface);
+  border-right: 1px solid var(--portal-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.portalNav {
+  flex: 1;
+  padding: 24px 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  color: var(--portal-text-dim);
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.2s;
+  border-left: 2px solid transparent;
+}
+
+.navItem:hover {
+  color: var(--portal-text);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.navItem.active {
+  color: var(--portal-accent);
+  border-left-color: var(--portal-accent);
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.portalContent {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.logoutButton {
+  margin: 24px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid var(--portal-border);
+  color: var(--portal-text-dim);
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  border-color: var(--portal-error);
+  color: var(--portal-error);
+}
+
+/* Performance Widget */
+.performanceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.performanceItem {
+  text-align: center;
+}
+
+.performanceLabel {
+  display: block;
+  font-size: 11px;
+  color: var(--portal-text-dim);
+  margin-bottom: 8px;
+}
+
+.performanceValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.performanceValue.positive {
+  color: var(--portal-accent);
+}
+
+.performanceValue.negative {
+  color: var(--portal-error);
+}
+
+/* Account Summary */
+.accountDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.detailValue {
+  font-family: 'Fira Code', monospace;
+  color: var(--portal-text);
+}
+
+.viewStatement {
+  color: var(--portal-accent);
+  text-decoration: none;
+  font-size: 12px;
+  transition: opacity 0.2s;
+}
+
+.viewStatement:hover {
+  opacity: 0.8;
+}
+
+/* Notification Widget */
+.notificationContent {
+  text-align: center;
+}
+
+.notificationCount {
+  font-family: 'Fira Code', monospace;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--portal-warning);
+  margin-bottom: 8px;
+}
+
+.notificationText {
+  font-size: 12px;
+  color: var(--portal-text-dim);
+  margin-bottom: 16px;
+}
+
+.viewNotifications {
+  color: var(--portal-accent);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* Analytics Page */
+.analyticsContainer {
+  padding: 0;
+}
+
+.analyticsHeader {
+  padding: 32px 24px;
+  border-bottom: 1px solid var(--portal-border);
+}
+
+.analyticsHeader h1 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 24px;
+}
+
+.analyticsControls {
+  display: flex;
+  gap: 32px;
+  align-items: flex-end;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controlGroup label {
+  font-size: 11px;
+  color: var(--portal-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.selectControl {
+  background: var(--portal-bg);
+  border: 1px solid var(--portal-border);
+  color: var(--portal-text);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+}
+
+.timeRangeButtons {
+  display: flex;
+  gap: 1px;
+  background: var(--portal-border);
+}
+
+.timeButton {
+  background: var(--portal-surface);
+  border: none;
+  color: var(--portal-text-dim);
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timeButton:hover {
+  background: var(--portal-bg);
+  color: var(--portal-text);
+}
+
+.timeButton.active {
+  background: var(--portal-accent);
+  color: var(--portal-bg);
+}
+
+.chartSection,
+.metricsSection,
+.benchmarkSection {
+  padding: 32px 24px;
+  border-bottom: 1px solid var(--portal-border);
+}
+
+.chartSection h2,
+.metricsSection h2,
+.benchmarkSection h2 {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--portal-text-dim);
+  margin-bottom: 20px;
+}
+
+.chartContainer {
+  background: var(--portal-surface);
+  border: 1px solid var(--portal-border);
+  padding: 24px;
+  min-height: 400px;
+}
+
+.benchmarkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.benchmarkItem {
+  background: var(--portal-surface);
+  border: 1px solid var(--portal-border);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.benchmarkLabel {
+  font-size: 12px;
+  color: var(--portal-text-dim);
+}
+
+.benchmarkValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.benchmarkValue.positive {
+  color: var(--portal-accent);
+}
+
+.benchmarkValue.negative {
+  color: var(--portal-error);
+}
+
+.exportSection {
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.exportButton {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid var(--portal-border);
+  color: var(--portal-text);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.exportButton:hover {
+  border-color: var(--portal-accent);
+  color: var(--portal-accent);
+}
+
+/* Documents Page */
+.documentsContainer {
+  padding: 0;
+}
+
+.documentsHeader {
+  padding: 32px 24px;
+  border-bottom: 1px solid var(--portal-border);
+}
+
+.documentsHeader h1 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+
+.documentsSubtext {
+  font-size: 13px;
+  color: var(--portal-text-dim);
+}
+
+.documentsControls {
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.searchInput {
+  flex: 1;
+  background: var(--portal-bg);
+  border: 1px solid var(--portal-border);
+  padding: 8px 16px;
+  color: var(--portal-text);
+  font-size: 13px;
+}
+
+.categorySelect {
+  background: var(--portal-bg);
+  border: 1px solid var(--portal-border);
+  padding: 8px 16px;
+  color: var(--portal-text);
+  font-size: 13px;
+}
+
+.categoryTabs {
+  display: flex;
+  gap: 1px;
+  background: var(--portal-border);
+  margin: 0 24px;
+}
+
+.categoryTab {
+  background: var(--portal-surface);
+  border: none;
+  padding: 12px 20px;
+  color: var(--portal-text-dim);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.categoryTab:hover {
+  background: var(--portal-bg);
+  color: var(--portal-text);
+}
+
+.categoryTab.active {
+  background: var(--portal-accent);
+  color: var(--portal-bg);
+}
+
+.categoryCount {
+  margin-left: 4px;
+  opacity: 0.7;
+}
+
+.documentsList {
+  padding: 24px;
+}
+
+.documentsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.documentsTable th {
+  text-align: left;
+  padding: 12px;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--portal-text-dim);
+  border-bottom: 1px solid var(--portal-border);
+}
+
+.documentsTable td {
+  padding: 16px 12px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--portal-border);
+}
+
+.documentName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.documentIcon {
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.downloadButton {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--portal-border);
+  color: var(--portal-text);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.downloadButton:hover {
+  border-color: var(--portal-accent);
+  color: var(--portal-accent);
+}
+
+.noDocuments {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--portal-text-dim);
+}
+
+.securityNotice {
+  margin: 24px;
+  padding: 16px;
+  background: var(--portal-surface);
+  border: 1px solid var(--portal-border);
+  font-size: 12px;
+  color: var(--portal-text-dim);
+}
+
+/* Messages Page */
+.messagesContainer {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  height: 100vh;
+}
+
+.messagesList {
+  background: var(--portal-surface);
+  border-right: 1px solid var(--portal-border);
+  overflow-y: auto;
+}
+
+.messagesHeader {
+  padding: 20px;
+  border-bottom: 1px solid var(--portal-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messagesHeader h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.composeButton {
+  padding: 8px 16px;
+  background: var(--portal-accent);
+  color: var(--portal-bg);
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.messagesInbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageItem {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--portal-border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.messageItem:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.messageItem.unread {
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.messageItem.selected {
+  background: rgba(0, 255, 0, 0.1);
+  border-left: 2px solid var(--portal-accent);
+}
+
+.messageHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.messageFrom {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.messageDate {
+  font-size: 11px;
+  color: var(--portal-text-dim);
+}
+
+.messageSubject {
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.urgentBadge {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: var(--portal-error);
+  color: var(--portal-bg);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.messagePreview {
+  font-size: 12px;
+  color: var(--portal-text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.messageContent {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+}
+
+.messageDetail h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.messageMetadata {
+  display: flex;
+  gap: 24px;
+  font-size: 12px;
+  color: var(--portal-text-dim);
+  margin-bottom: 32px;
+}
+
+.messageBody {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.messageActions {
+  display: flex;
+  gap: 16px;
+}
+
+.replyButton,
+.archiveButton {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid var(--portal-border);
+  color: var(--portal-text);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.replyButton:hover {
+  border-color: var(--portal-accent);
+  color: var(--portal-accent);
+}
+
+.noMessageSelected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--portal-text-dim);
+}
+
+.composeForm {
+  max-width: 600px;
+}
+
+.composeForm h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.composeForm .formGroup {
+  margin-bottom: 20px;
+}
+
+.composeForm input,
+.composeForm textarea {
+  width: 100%;
+  background: var(--portal-bg);
+  border: 1px solid var(--portal-border);
+  padding: 12px 16px;
+  color: var(--portal-text);
+  font-size: 14px;
+}
+
+.composeForm textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.composeActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.sendButton {
+  padding: 12px 24px;
+  background: var(--portal-accent);
+  color: var(--portal-bg);
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancelButton {
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid var(--portal-border);
+  color: var(--portal-text);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.encryptionNote {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--portal-text-dim);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .loginBox {
+    padding: 32px 24px;
+  }
+  
+  .portalLayout {
+    flex-direction: column;
+  }
+  
+  .portalSidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--portal-border);
+  }
+  
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .messagesContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .messagesList {
+    display: none;
+  }
+}
+
+/* Chart Components */
+.attributionChart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.attributionItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attributionHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.attributionBar {
+  height: 24px;
+  background: var(--portal-surface);
+  border: 1px solid var(--portal-border);
+  position: relative;
+}
+
+.attributionFill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.riskMetricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.riskMetricCard {
+  background: var(--portal-surface);
+  border: 1px solid var(--portal-border);
+  padding: 20px;
+}
+
+.riskMetricCard h4 {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--portal-text-dim);
+  margin: 0 0 12px;
+}
+
+.metricValues {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.primaryValue {
+  font-family: 'Fira Code', monospace;
+  font-size: 24px;
+  color: var(--portal-accent);
+}
+
+.benchmarkValue {
+  font-size: 11px;
+  color: var(--portal-text-dim);
+}
+
+/* AI Recommendations Section */
+.recommendationsSection {
+  margin-top: 32px;
+}
+
+/* AI Assistant Panel */
+.aiAssistantPanel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Messages AI Integration */
+.headerActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.aiAssistantToggle {
+  background: rgba(10, 255, 0, 0.1);
+  border: 1px solid rgba(10, 255, 0, 0.3);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aiAssistantToggle:hover {
+  background: rgba(10, 255, 0, 0.2);
+  border-color: var(--portal-green);
+  transform: scale(1.05);
+} 

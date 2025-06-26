@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Navigation from '../src/components/navigation/Navigation'
 import DataDeluge from '../src/components/philosophy/DataDeluge'
 import SignalFromNoise from '../src/components/philosophy/SignalFromNoise'
 import QuantitativeRigor from '../src/components/philosophy/QuantitativeRigor'
@@ -19,7 +20,7 @@ export default function PhilosophyPage() {
     gsap.set('body', { overflow: 'auto' })
     
     // Create master timeline
-    const tl = gsap.timeline({
+    gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
@@ -42,14 +43,9 @@ export default function PhilosophyPage() {
         <meta name="description" content="Discover how Fuerte transforms chaotic market data into structured alpha through quantitative rigor and automated execution." />
       </Head>
       
+      <Navigation />
+      
       <main className={styles.philosophyContainer} ref={containerRef}>
-        {/* Navigation */}
-        <nav className={styles.philosophyNav}>
-          <a href="/" className={styles.navBack}>← Back to Home</a>
-          <div className={styles.navProgress}>
-            <div className={styles.progressBar} id="scrollProgress"></div>
-          </div>
-        </nav>
         
         {/* Section 1: The Data Deluge */}
         <section className={styles.section} id="data-deluge">

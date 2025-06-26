@@ -1,0 +1,121 @@
+/* Responsive Layout Styles */
+
+/* Desktop Layouts */
+.desktopLayout {
+  width: 100%;
+  display: grid;
+  gap: 40px;
+  align-items: start;
+}
+
+.twoColumn {
+  grid-template-columns: 1fr 1fr;
+}
+
+.threeColumn {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.single {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.layoutItem {
+  width: 100%;
+}
+
+/* Mobile Stack Layout */
+.mobileStack {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mobileStackItem {
+  width: 100%;
+}
+
+/* Mobile Tab Layout */
+.tabLayout {
+  width: 100%;
+}
+
+.tabNav {
+  display: flex;
+  border-bottom: 1px solid #333;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabButton {
+  flex: 1;
+  min-width: 100px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  color: #999;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tabButton.active {
+  color: #00BFFF;
+}
+
+.tabButton::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #00BFFF;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tabButton.active::after {
+  transform: scaleX(1);
+}
+
+.tabContent {
+  width: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .threeColumn {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktopLayout {
+    display: none;
+  }
+  
+  .twoColumn,
+  .threeColumn {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

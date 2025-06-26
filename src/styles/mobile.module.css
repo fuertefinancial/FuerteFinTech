@@ -1,0 +1,183 @@
+/* Global Mobile Styles */
+
+/* Touch-friendly tap targets */
+.touchTarget {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile-optimized typography */
+@media (max-width: 768px) {
+  /* Prevent font size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* Readable font sizes */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+  
+  h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+  
+  h3 {
+    font-size: clamp(20px, 5vw, 24px);
+  }
+  
+  /* Touch-friendly spacing */
+  button, a {
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Mobile-friendly containers */
+  .container {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+  
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Mobile navigation spacing */
+  nav {
+    padding: 16px 20px;
+  }
+  
+  /* Card layouts stack on mobile */
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Responsive tables */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Touch feedback */
+  button:active,
+  a:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+  
+  /* Disable hover effects on touch */
+  @media (hover: none) {
+    button:hover,
+    a:hover {
+      transform: none;
+      opacity: 1;
+    }
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Reduce vertical spacing in landscape */
+  section {
+    padding: 40px 0;
+  }
+  
+  h1 {
+    margin-bottom: 16px;
+  }
+  
+  /* Adjust hero height */
+  .heroContainer {
+    min-height: 100vh;
+    max-height: 600px;
+  }
+}
+
+/* Small mobile (phones) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  button, a {
+    font-size: 14px;
+  }
+  
+  /* Single column layouts */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Accessibility for mobile */
+@media (max-width: 768px) {
+  /* Larger touch targets for accessibility */
+  .accessibleTouch {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    button, a {
+      border: 2px solid currentColor;
+    }
+  }
+  
+  /* Reduced motion for mobile */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* iOS-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Fix for iOS Safari bottom bar */
+  .fixedBottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Prevent iOS zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  
+  /* Smooth scrolling on iOS */
+  .scrollContainer {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Android-specific fixes */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* High DPI adjustments */
+  .border {
+    border-width: 0.5px;
+  }
+} 

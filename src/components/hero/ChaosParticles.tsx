@@ -1,12 +1,11 @@
 import React, { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
-import { createNoise3D } from 'simplex-noise'
 
 interface ChaosParticlesProps {
   count: number
   scrollProgress: React.MutableRefObject<number>
-  processingPhase: React.MutableRefObject<number>
+  processingPhase?: React.MutableRefObject<number>
   mousePosition: React.MutableRefObject<{ x: number; y: number }>
 }
 
@@ -114,9 +113,8 @@ const fragmentShader = `
 `
 
 export default function ChaosParticles(props: ChaosParticlesProps) {
-  const { count, scrollProgress, processingPhase, mousePosition } = props
+  const { count, scrollProgress, mousePosition } = props
   const meshRef = useRef<THREE.Points>(null!)
-  const noise3D = useMemo(() => createNoise3D(), [])
   
   // Generate initial positions and attributes
   const [positions, randoms, velocities] = useMemo(() => {
@@ -148,10 +146,12 @@ export default function ChaosParticles(props: ChaosParticlesProps) {
   // Update uniforms
   useFrame((state) => {
     if (meshRef.current) {
-      const uniforms = meshRef.current.material.uniforms
-      uniforms.uTime.value = state.clock.elapsedTime
-      uniforms.uScrollProgress.value = scrollProgress.current
-      uniforms.uMouse.value.set(mousePosition.current.x, mousePosition.current.y)
+      const material = meshRef.current.material as THREE.ShaderMaterial
+      if (material && material.uniforms) {
+        material.uniforms.uTime.value = state.clock.elapsedTime
+        material.uniforms.uScrollProgress.value = scrollProgress.current
+        material.uniforms.uMouse.value.set(mousePosition.current.x, mousePosition.current.y)
+      }
       
       // Rotate the entire particle system slowly
       meshRef.current.rotation.y = state.clock.elapsedTime * 0.05

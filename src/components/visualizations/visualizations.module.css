@@ -1,0 +1,118 @@
+/* Visualization Components Styles */
+.correlationMatrix,
+.waterfallChart,
+.ecosystemGraph {
+  display: block;
+  margin: 0 auto;
+  background: rgba(10, 10, 16, 0.5);
+  border-radius: 8px;
+}
+
+/* Tooltip Styles */
+.tooltip {
+  position: absolute;
+  padding: 12px;
+  background: #0A0A10;
+  border: 1px solid #00BFFF;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #FFF;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.tooltip strong {
+  color: #00BFFF;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Animation Classes */
+@keyframes pulseGlow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 191, 255, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 191, 255, 0.4));
+  }
+}
+
+.glowing {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Chart Container */
+.chartContainer {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  background: rgba(10, 10, 16, 0.3);
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.chartTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #00BFFF;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Loading State */
+.chartLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #666;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 191, 255, 0.1);
+  border-top-color: #00BFFF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Export Button */
+.exportButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #666;
+  color: #999;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exportButton:hover {
+  border-color: #00BFFF;
+  color: #00BFFF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .correlationMatrix,
+  .waterfallChart,
+  .ecosystemGraph {
+    overflow-x: auto;
+  }
+} 

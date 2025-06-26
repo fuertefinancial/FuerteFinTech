@@ -1,0 +1,391 @@
+/* UI Components Microinteractions Styles */
+
+/* Button Component */
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  outline: none;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Button Variants */
+.primary {
+  background: #00BFFF;
+  color: #0A0A10;
+}
+
+.secondary {
+  background: transparent;
+  color: #00BFFF;
+  border: 1px solid #00BFFF;
+}
+
+.ghost {
+  background: transparent;
+  color: #999;
+  border: 1px solid transparent;
+}
+
+.ghost:hover {
+  border-color: #666;
+  color: #FFF;
+}
+
+/* Button Sizes */
+.small {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.medium {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.large {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+/* Geometric Fill Effect */
+.geometricFill {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+/* Ripple Effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  animation: rippleAnimation 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes rippleAnimation {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  to {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+/* Glitch Effect Layers */
+.glitchLayer,
+.glitchLayer2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.glitchLayer {
+  color: #FF3300;
+  animation: glitch1 0.3s infinite;
+  opacity: 0.8;
+  mix-blend-mode: screen;
+}
+
+.glitchLayer2 {
+  color: #00BFFF;
+  animation: glitch2 0.3s infinite;
+  opacity: 0.8;
+  mix-blend-mode: screen;
+}
+
+@keyframes glitch1 {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes glitch2 {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(-2px, 2px);
+  }
+}
+
+.buttonContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* Form Input Component */
+.formInputWrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.formInput {
+  width: 100%;
+  padding: 16px 12px 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #FFF;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: transparent;
+  outline: none;
+}
+
+.formInput.invalid {
+  border-color: #FF3300;
+}
+
+.formLabel {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  pointer-events: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.required {
+  color: #FF3300;
+  margin-left: 4px;
+}
+
+.focusLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00BFFF, #0088CC);
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+.validationIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.errorMessage {
+  margin-top: 8px;
+  color: #FF3300;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Accordion Component */
+.accordion {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.accordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accordionHeader:hover {
+  background: rgba(0, 191, 255, 0.05);
+}
+
+.accordionTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  color: #FFF;
+}
+
+.accordionIcon {
+  transition: transform 0.3s ease;
+}
+
+.accordionIcon.open {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  overflow: hidden;
+}
+
+.accordionBody {
+  padding: 0 20px 20px;
+  color: #999;
+  line-height: 1.6;
+}
+
+/* Toggle Component */
+.toggleWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background: #333;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle.active {
+  background: #00BFFF;
+}
+
+.toggleSlider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #FFF;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle.active .toggleSlider {
+  transform: translateX(24px);
+}
+
+.toggleLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #999;
+}
+
+/* Sound Control */
+.soundControl {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(10, 10, 16, 0.9);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.soundIcon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.soundControl:hover .soundIcon {
+  opacity: 1;
+}
+
+/* Mobile Haptic Indicator */
+.hapticIndicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 2px solid #00BFFF;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: hapticPulse 0.3s ease-out;
+}
+
+@keyframes hapticPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .button {
+    padding: 10px 20px;
+  }
+  
+  .formInput {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+} 

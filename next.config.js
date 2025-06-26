@@ -73,12 +73,6 @@ const nextConfig = {
     return config
   },
   
-  // Experimental features
-  experimental: {
-    // Enable new app directory structure
-    appDir: false, // Using pages directory for GitHub Pages compatibility
-  },
-  
   // Compiler options
   compiler: {
     // Remove console logs in production

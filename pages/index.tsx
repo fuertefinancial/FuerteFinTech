@@ -1,6 +1,8 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
+import Navigation from '../src/components/navigation/Navigation'
+import { useDeviceCapabilities } from '../src/hooks/useDeviceCapabilities'
 import styles from '../src/styles/hero.module.css'
 
 // Dynamic import for Three.js components to avoid SSR issues
@@ -16,33 +18,50 @@ const FuerteEngine = dynamic(
   }
 )
 
+const MobileHero = dynamic(
+  () => import('../src/components/hero/MobileHero'),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className={styles.heroLoading}>
+        <div className={styles.loadingSpinner}></div>
+      </div>
+    )
+  }
+)
+
 export default function HomePage() {
+  const { isMobile } = useDeviceCapabilities()
+  
   return (
     <>
       <Head>
-        <title>Fuerte Financial Technologies - Harnessing Chaos, Engineering Alpha</title>
-        <meta name="description" content="Structure from Chaos. Alpha from Intelligence. Fuerte Financial Technologies leverages advanced AI to transform market volatility into structured returns." />
+        <title>Fuerte Financial Technologies | Harnessing Chaos, Engineering Alpha</title>
+        <meta name="description" content="Where artificial intelligence transforms market volatility into structured returns. Institutional-grade AI investment strategies." />
+        <meta property="og:title" content="Fuerte Financial Technologies" />
+        <property="og:description" content="Harnessing Chaos, Engineering Alpha" />
+        <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        
-        {/* Preload critical assets */}
-        <link rel="preload" href="/fonts/SpaceGrotesk-Bold.woff2" as="font" type="font/woff2" crossOrigin="" />
-        <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossOrigin="" />
       </Head>
 
+      <Navigation />
+
       <main>
-        {/* Hero Section with WebGL Visualization */}
+        {/* Hero Section with WebGL Visualization or Mobile Optimized Version */}
         <section className={styles.heroContainer}>
           <Suspense fallback={
             <div className={styles.heroLoading}>
               <div className={styles.loadingSpinner}></div>
             </div>
           }>
-            <FuerteEngine />
+            {isMobile ? <MobileHero /> : <FuerteEngine />}
           </Suspense>
           
-          {/* Scroll Indicator */}
-          <div className={styles.scrollIndicator} aria-label="Scroll down"></div>
+          {/* Scroll Indicator - hide on mobile */}
+          {!isMobile && (
+            <div className={styles.scrollIndicator} aria-label="Scroll down"></div>
+          )}
         </section>
 
         {/* Philosophy Section (Prompt 5) */}
@@ -87,6 +106,17 @@ export default function HomePage() {
         
         #strategies {
           background: var(--color-black-alpha-80);
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+          .section {
+            padding: 60px 0;
+          }
+          
+          .container {
+            padding: 0 20px;
+          }
         }
       `}</style>
     </>
