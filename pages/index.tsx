@@ -39,7 +39,7 @@ export default function HomePage() {
         <title>Fuerte Financial Technologies | Harnessing Chaos, Engineering Alpha</title>
         <meta name="description" content="Where artificial intelligence transforms market volatility into structured returns. Institutional-grade AI investment strategies." />
         <meta property="og:title" content="Fuerte Financial Technologies" />
-        <property="og:description" content="Harnessing Chaos, Engineering Alpha" />
+        <meta property="og:description" content="Harnessing Chaos, Engineering Alpha" />
         <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
